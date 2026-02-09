@@ -17,4 +17,4 @@
 Bash
 ./array_search 5 5
 
-![Приклад виконання](../img/screen.png)
+![Приклад виконання](../img/lr1.png)
