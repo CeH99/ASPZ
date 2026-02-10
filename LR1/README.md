@@ -27,4 +27,5 @@
 ```bash
 make
 
+### Screens
 ![Приклад виконання](../img/lr1.png)
