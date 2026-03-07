@@ -1,18 +1,21 @@
-// vuln.c
 #include <stdio.h>
 #include <string.h>
 
-void secret_function() {
-    printf("\n[!] Exploit success!\n");
-}
+void vulnerable(char *input) {
+    char buffer[16];
 
-void process_input(char *input) {
-    char buffer[16]; // Малий буфер
-    strcpy(buffer, input); // Вразливість: копіювання без перевірки довжини
-    printf("Ваш ввід: %s\n", buffer);
+    strcpy(buffer, input); // !!!
+    printf("Buffer: %s\n", buffer);
 }
 
 int main(int argc, char *argv[]) {
-    if (argc > 1) process_input(argv[1]);
+
+    if (argc < 2) {
+        printf("Usage: %s <text>\n", argv[0]);
+        return 1;
+    }
+
+    vulnerable(argv[1]);
+
     return 0;
 }
