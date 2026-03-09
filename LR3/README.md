@@ -31,18 +31,25 @@
 
 ``` bash
 docker run -it --rm ubuntu bash
-
+useradd -m student && su -s /bin/bash student
 ulimit -n
 ulimit -aS | grep "open files"
 ulimit -aH | grep "open files"
-
 ulimit -n 3000
+ulimit -aS | grep "open files"
+ulimit -aH | grep "open files"
 ulimit -n 3001
 ulimit -n 2000
+ulimit -n
+ulimit -aS | grep "open files"
+ulimit -aH | grep "open files"
+ulimit -n 3000
 ```
-![task1](img/task1.png)
+### User
+![task1](img/task1_2.png)
 
-![task1_2](img/task1_2.png)
+### Root User
+![task1_2](img/task1.png)
 ------------------------------------------------------------------------
 
 # Завдання 3.2 --- Використання утиліти perf
@@ -97,9 +104,9 @@ perf stat -e task-clock dd if=/dev/zero of=testfile bs=1024 count=2
 ### Команди
 
 ``` bash
-gcc task3_3.c -o task3_3
+gcc task3.c -o task3
 
-(ulimit -f 1; ./task3_3)
+(ulimit -f 1; ./task3)
 ```
 
 ![task4](img/task3.png)
@@ -127,9 +134,9 @@ gcc task3_3.c -o task3_3
 ### Команди
 
 ``` bash
-gcc task3_4.c -o task3_4
+gcc task4.c -o task4
 
-(ulimit -t 1; ./task3_4)
+(ulimit -t 1; ./task4)
 ```
 ![task4](img/task4.png)
 ![task4_2](img/task4_2.png)
@@ -160,14 +167,14 @@ gcc task3_4.c -o task3_4
 ### Команди
 
 ``` bash
-gcc task3_5.c -o task3_5
+gcc task5.c -o task5
 
-./task3_5
-./task3_5 no_exist.txt out.txt
+./task5
+./task5 no_exist.txt out.txt
 
 dd if=/dev/zero of=bigfile.bin bs=1024 count=10
 
-(ulimit -f 5; ./task3_5 bigfile.bin out_big.bin)
+(ulimit -f 5; ./task5 bigfile.bin out_big.bin)
 ```
 ![task5](img/task5.png)
 ------------------------------------------------------------------------
@@ -187,9 +194,9 @@ dd if=/dev/zero of=bigfile.bin bs=1024 count=10
 ### Команди
 
 ``` bash
-gcc task3_6.c -o task3_6
+gcc task6.c -o task6
 
-(ulimit -s 100; ./task3_6)
+(ulimit -s 100; ./task6)
 ```
 ![task6](img/task6.png)
 ------------------------------------------------------------------------
