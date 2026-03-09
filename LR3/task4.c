@@ -3,14 +3,12 @@
 #include <signal.h>
 #include <time.h>
 
-// Signal handler for exceeding CPU time limit
 void handle_sigxcpu(int sig) {
     printf("\n[HANDLER]: CPU time limit exceeded (SIGXCPU). Stopping generation.\n");
     exit(0);
 }
 
 int main() {
-    // Register the signal handler
     signal(SIGXCPU, handle_sigxcpu);
     srand(time(NULL));
     

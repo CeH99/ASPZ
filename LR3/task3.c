@@ -3,14 +3,12 @@
 #include <signal.h>
 #include <unistd.h>
 
-// Signal handler for exceeding file size limit
 void handle_sigxfsz(int sig) {
     printf("\n[HANDLER]: File size limit reached (SIGXFSZ). Stopping write.\n");
     exit(0);
 }
 
 int main() {
-    // Register the signal handler
     signal(SIGXFSZ, handle_sigxfsz); 
     
     FILE *file = fopen("dice_rolls.txt", "w");
@@ -24,7 +22,7 @@ int main() {
     while (1) {
         int roll = (rand() % 6) + 1;
         fprintf(file, "Roll: %d\n", roll);
-        fflush(file); // Force write to disk to hit the limit faster
+        fflush(file);
     }
     
     fclose(file);
