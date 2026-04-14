@@ -22,13 +22,12 @@ int main() {
     // --- Тест 1: calloc ---
     start = get_time();
     void *ptr_calloc = calloc(1, SIZE);
-    end = get_time();
-    time_calloc = end - start;
-    
     if (!ptr_calloc) {
         perror("calloc failed");
         return 1;
     }
+    end = get_time();
+    time_calloc = end - start;
     printf("1. Час виконання calloc(): %f секунд\n", time_calloc);
     free(ptr_calloc);
 

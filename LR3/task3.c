@@ -21,7 +21,7 @@ int main() {
     
     while (1) {
         int roll = (rand() % 6) + 1;
-        fprintf(file, "Roll: %d\n", roll);
+        fprintf(file, "Roll№: %d\n", roll);
         fflush(file);
     }
     
