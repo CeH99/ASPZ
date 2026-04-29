@@ -5,7 +5,6 @@
 #define MAX_LINE_LENGTH 2048
 
 void wait_for_user(FILE *tty) {
-    // Print the prompt in reverse video (classic 'more' style)
     printf("\033[7m--More--(Press Enter to continue)\033[0m");
     fflush(stdout);
 
@@ -22,7 +21,7 @@ int main(int argc, char *argv[]) {
     char buffer[MAX_LINE_LENGTH];
     int line_count = 0;
 
-    FILE *tty = fopen("/dev/tty", "r");
+    FILE *tty = fopen("/dev/tty", "r"); //!!!
     if (tty == NULL) {
         perror("Warning: Cannot open /dev/tty, falling back to stdin");
         tty = stdin;

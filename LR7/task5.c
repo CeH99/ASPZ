@@ -11,12 +11,12 @@ void list_dir(const char *path) {
     char next_path[1024];
 
     while ((entry = readdir(dir)) != NULL) {
-        // Skip "." and ".." to avoid infinite loops
+        // !!! Skip "." and ".." to avoid infinite loops 
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
             continue;
         }
 
-        // Format the full path
+        // format the path
         snprintf(next_path, sizeof(next_path), "%s/%s", path, entry->d_name);
         
         printf("%s\n", next_path);
