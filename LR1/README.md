@@ -33,4 +33,4 @@ make
 ./programm -dimA -dimB
 ```
 
-![Приклад виконання](../img/lr1.png)
+![Приклад виконання](img/lr1.png)
