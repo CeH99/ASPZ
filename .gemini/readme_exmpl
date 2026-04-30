@@ -1,0 +1,9 @@
+1. README file should be in ukrainian language
+2. It must include theme, number of lab and teoretical bases for the lab it was writen for
+3. Every task must be foramted with this algorithm^
+    1. The problem in task
+    2. Solution (without code of solution)
+    3. code for compilation and starting the program
+    4. screen of results in console (for this one just leave the text in format "img/task*.png")
+4. Task for certain variant that is decorated as in the previous point
+5. The exapmle(if needed) can be seen in LR9/README.md
